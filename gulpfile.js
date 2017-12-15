@@ -1,5 +1,5 @@
 let gulp = require('gulp'),
-    pug = require('gulp-pug'),
+    // pug = require('gulp-pug'),
     postcss = require('gulp-postcss'),
     browserSync = require('browser-sync'),
     precss = require('precss'),
@@ -9,18 +9,22 @@ let gulp = require('gulp'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglifyjs');
 
-gulp.task('pug', () => {
-  gulp.src('./src/*.pug')
-  .pipe(pug({
-    pretty: true
-  }))
-  .pipe(gulp.dest('./public'))
-});
+// gulp.task('pug', () => {
+//   gulp.src('src/*.pug')
+//   .pipe(pug({
+//     pretty: true
+//   }))
+//   .pipe(gulp.dest('./public'))
+//   .pipe(browserSync.reload({
+//       stream: true
+//   }));
+// });
 
 gulp.task('css', () => {
   let processors = [
-    precss,
     cssnext,
+    precss,
+    // cssnext,
     short,
     mqpacker
   ];
@@ -45,10 +49,10 @@ gulp.task('serve', () => {
   })
 });
 
-gulp.task('watch',['serve', 'pug', 'css', 'scripts'], () => {
+gulp.task('watch',['serve', 'css', 'scripts'], () => {
   gulp.watch('src/css/*.css', ['css'])
   gulp.watch('src/js/**/*.js', browserSync.reload)
-  gulp.watch('public/index.html', browserSync.reload)
+  gulp.watch('public/*.html', browserSync.reload)
 });
 
 gulp.task('default', ['watch']);
