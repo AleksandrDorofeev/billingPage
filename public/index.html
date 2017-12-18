@@ -10,6 +10,7 @@
   </head>
   <body>
     <div class="container">
+
       <div class="top-menu">
         <div class="left-menu">
           <span class="burger-menu"></span>
@@ -23,31 +24,57 @@
           </label>
         </div>
       </div>
+
       <main class="billing">
         <div class="left-side">
           <div class="used">
             <span>55 of 53 licenses used</span>
             <span>Active till 15 Sept 2014</span>
           </div>
+          <hr class="used-line">
           <div class="buy-more">
-            <span>Buy more licenses:</span>
-            <button>-</button>
-            <span>3</span>
-            <button>+</button>
-            <span>x 5,99 $/mo</span>
+            <span class="buy">Buy more licenses:</span>
+            <div class="quantity">
+              <button class="minus"><span></span></button>
+              <span class="number">3</span>
+              <button class="plus"><span></span><span></span></button>
+              <span class="cost">$5,99/mo</span>
+            </div>
           </div>
           <div class="save">
             <span>Buy 2 more licenses and save $10</span>
           </div>
+          <hr class="used-line">
           <div class="subscription">
-            <span>Extend subscription:</span>
-            <div>none</div>
-            <div>6 months</div>
-            <div>9 months</div>
-            <div>1 year</div>
-            <div>2 years</div>
-            <hr class="subscription-line">
-            <div>
+            <span class="extend">Extend subscription:</span>
+            <div class="month-sub">
+              <div class="sub none">
+                <span>none</span>
+              </div>
+              <div class="sub half-year">
+                <span>6 months</span>
+                <span>$10 off</span>
+                <span>$39.99</span>
+              </div>
+              <div class="sub nine-month">
+                <span>9 months</span>
+                <span>$15 off</span>
+                <span>$69.99</span>
+              </div>
+              <div class="sub one-year">
+                <span>1 year</span>
+                <span>$25 off</span>
+                <span>$120.99</span>
+              </div>
+              <div class="sub two-years">
+                <span>2 years</span>
+                <span>$40 off</span>
+                <span>$250.99</span>
+              </div>
+            </div>
+            <div class="subscription-line"></div>
+            <div class="choose"></div>
+            <!-- <div>
               <span>$10 off</span>
               <span>$39.99</span>
             </div>
@@ -63,12 +90,16 @@
               <span>$40 off</span>
               <span>$250.99</span>
             </div>
-          </div>
+          </div> -->
+        </div>
         </div>
         <div class="right-side">
 
         </div>
       </main>
-    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/main.min.js"></script>
   </body>
 </html>
