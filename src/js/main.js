@@ -26,67 +26,48 @@ $(document).ready(function() {
   });
   $('input[type=radio]:not(:checked)').hide();
     $('.sub').on('click', function () {
-        $('input[type=radio]').show();
-        $('input[type=radio]:not(:checked)').hide();
+      $('input[type=radio]').show();
+      $('input[type=radio]:not(:checked)').hide();
+  });
 
-    });
-});
-// });
-  // $('.none, .half-year, .nine-month, .one-year, .two-years').on('click', function() {
-  //   if ($('.choose').hasClass('active_none')) {
-  //   $('.none-check-mark').css('display', 'block');
-  //   }else{
-  //   $('.none-check-mark').css('display', 'none');
-  //   }
+  // var number = $('.number');
+  // $('.plus').on('click' , function() {
+  //   count += 1;
+  //   return number.html(count);
+  // });
   //
-  //   if ($('.choose').hasClass('active_half-year')) {
-  //   $('.half-year-check-mark').css('display', 'block');
-  //   }else{
-  //   $('.half-year-check-mark').css('display', 'none');
-  //   }
-  //
-  //   if ($('.choose').hasClass('active_nine-month')) {
-  //   $('.nine-month-check-mark').css('display', 'block');
-  //   }else{
-  //   $('.nine-month-check-mark').css('display', 'none');
-  //   }
-  //
-  //   if ($('.choose').hasClass('active_one-year')) {
-  //   $('.one-year-check-mark').css('display', 'block');
-  //   }else{
-  //   $('.one-year-check-mark').css('display', 'none');
-  //   }
-  //
-  //   if ($('.choose').hasClass('active_two-years')) {
-  //   $('.two-years-check-mark').css('display', 'block');
-  //   }else{
-  //   $('.two-years-check-mark').css('display', 'none');
-  //   }
-  // })
-  // })
-  // var parent = document.querySelector('.month-sub');
-  // parent.addEventListener("click", check, false);
-  //
-  // function check(e) {
-  //   e.preventDefault()
-  //   if (e.target !== e.currentTarget) {
-  //     var clickedItem = e.target.className;
-  //     for(var i = 0; i < clickedItem.length; i++) {
-  //       clickedItem[i].addEventListener('click', function(e) {
-  //         e.preventDefault()
-  //         if($('.choose').hasClass('active_' + clickedItem)) {
-  //           $('.check-mark').css('display', 'block');
-  //         }else{
-  //           $('.check-mark').css('display', 'none');
-  //         }
-  //       }, false)
+  // $('.minus').on('click' , function() {
+  //   count -= 1;
+  //   number.html(count);
+  //   if(number.html(count) > 3){ // if the new number is >0
+  //       $(".minus").prop("disabled", false); // remain enable of - button
+  //     }else{
+  //       $(".minus").prop("disabled", true); // otherwise disable - button
   //     }
-  //     console.log('choose active_' + clickedItem);
-  //     // if($('.choose').hasClass('active_' + clickedItem)) {
-  //     //   $('.check-mark').css('display', 'block');
-  //     // }else{
-  //     //   $('.check-mark').css('display', 'none');
-  //     // }
-  //   }
-  // }
-// })
+  // });
+
+  var count = 3;
+  var number = $('.number');
+  $(".minus").prop("disabled", true);
+
+  $(document).on("click", "button", function(e) {
+
+  var inputButton = $(this).data("change");
+
+  if (inputButton === "plus") {
+    count = count + 1;
+  } else {
+    count = count - 1;
+  }
+
+  number.html(count);
+  $('.summary-count').html(count);
+
+  if (count > 3) {
+    $(".minus").prop("disabled", false);
+  } else {
+    $(".minus").prop("disabled", true);
+  }
+});
+
+});
