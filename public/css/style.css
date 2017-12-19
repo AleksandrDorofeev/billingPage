@@ -410,6 +410,23 @@ input:checked + .slider:before {
           z-index: 10
         }
 
+.billing .left-side .subscription .month-sub .sub:nth-child(1) {
+
+  /* &:before {
+              content: '';
+              position: absolute;
+              width: 30px;
+              height: 30px;
+              background-color: #ffffff;
+              border: 1px solid #749e42;
+              border-radius: 50%;
+              top: 45%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              display: none;
+            }*/
+}
+
 .billing .left-side .subscription .month-sub .sub:nth-child(1):after {
   content:'';
   position:absolute;
@@ -543,6 +560,58 @@ input:checked + .slider:before {
 .billing .right-side {
     background-color: #f5f5f5;
   }
+
+.check-mark {
+  visibility:hidden;
+}
+
+.custom-radio {
+  /* content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid #749e42;
+  border-radius: 50%;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  display: none;
+}
+
+.custom-radio:active, input.check-mark:checked ~ .custom-radio {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 2px solid #749e42;
+  border-radius: 50%;
+  top: 44%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 100
+}
+
+.custom-radio:active:before, input.check-mark:checked ~ .custom-radio:before {
+  content:'';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 8px;
+  height: 3px;
+  border: none;
+  border-left: 2px solid #749e42;
+  border-bottom: 2px solid #749e42;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: -20% bottom;
+          transform-origin: -20% bottom;
+}
 
 /* Animation */
 
